@@ -1,36 +1,16 @@
 package com.example.design.patterns.general.composition.strategy;
 
-import com.example.design.patterns.general.composition.strategy.behaviour.quack.QuackBehaviour;
-import com.example.design.patterns.general.composition.strategy.behaviour.fly.FlyBehaviour;
+import com.example.design.patterns.general.composition.strategy.behaviour.fly.Flyable;
+import com.example.design.patterns.general.composition.strategy.behaviour.quack.Quackable;
 
-public abstract class Duck {
+public abstract class Duck implements Flyable, Quackable {
 
-  protected QuackBehaviour quackBehaviour;
-  protected FlyBehaviour flyBehaviour;
-
-  public Duck() {}
-
-  public void performQuack() {
-    quackBehaviour.quack();
-  }
-
-  public void performFly() {
-    flyBehaviour.fly();
-  }
-  
-  public void swim() {
-    System.out.println("all ducks can swim");
-  }
-
-  public abstract  void display();
-
-    public void setQuackBehaviour(final QuackBehaviour qb) {
-        this.quackBehaviour = qb;
+    public void swim() {
+        System.out.println("all ducks can swim");
     }
 
-    public void setFlyBehaviour(final FlyBehaviour fb) {
-        this.flyBehaviour = fb;
-    }
+    public abstract  void display();
+
 }
 
 

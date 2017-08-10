@@ -1,15 +1,10 @@
 package com.example.design.patterns.general.composition.strategy;
 
-import com.example.design.patterns.general.composition.strategy.behaviour.fly.impl.FlyWithWings;
-import com.example.design.patterns.general.composition.strategy.behaviour.quack.impl.Quack;
+import com.example.design.patterns.general.composition.strategy.behaviour.fly.FliesWithWings;
+import com.example.design.patterns.general.composition.strategy.behaviour.quack.Quacks;
 
-public class MallardDuck extends Duck {
+public class MallardDuck extends Duck implements FliesWithWings, Quacks {
   
-  public MallardDuck() {
-    quackBehaviour = new Quack();
-    flyBehaviour = new FlyWithWings();
-  }
-
   public void display() {
     System.out.println("imma mallard duck!");
   }

@@ -1,14 +1,9 @@
 package com.example.design.patterns.general.composition.strategy;
 
-import com.example.design.patterns.general.composition.strategy.behaviour.fly.impl.DontFly;
-import com.example.design.patterns.general.composition.strategy.behaviour.quack.impl.MutedQuack;
+import com.example.design.patterns.general.composition.strategy.behaviour.fly.DoesntFly;
+import com.example.design.patterns.general.composition.strategy.behaviour.quack.DoesntQuack;
 
-public class ModelDuck extends Duck {
-
-    public ModelDuck() {
-        flyBehaviour = new DontFly();
-        quackBehaviour = new MutedQuack();
-    }
+public class ModelDuck extends Duck implements DoesntFly, DoesntQuack {
 
     public void display() {
         System.out.println("imma model duck!");
