@@ -6,7 +6,7 @@ import com.example.design.patterns.general.composition.strategy.duck.ModelDuck;
 
 /**
  * Represent strategy pattern implementation
- * with introduced default interface implementations in java8
+ * with default interface implementations introduced in java8
  */
 
 class Example {
