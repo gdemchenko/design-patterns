@@ -1,4 +1,4 @@
-package com.example.design.patterns.general.composition.strategy;
+package com.example.design.patterns.general.composition.strategy.duck;
 
 import com.example.design.patterns.general.composition.strategy.behaviour.fly.FliesWithWings;
 import com.example.design.patterns.general.composition.strategy.behaviour.quack.Quacks;
