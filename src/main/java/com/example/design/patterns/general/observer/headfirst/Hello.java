@@ -1,8 +1,8 @@
-package com.example.design.patterns.general.observer;
+package com.example.design.patterns.general.observer.headfirst;
 
-import com.example.design.patterns.general.observer.observer.impl.CurrentConditionsDisplay;
-import com.example.design.patterns.general.observer.observer.impl.HeatIndexDisplay;
-import com.example.design.patterns.general.observer.subject.impl.WeaterData;
+import com.example.design.patterns.general.observer.headfirst.observer.impl.CurrentConditionsDisplay;
+import com.example.design.patterns.general.observer.headfirst.observer.impl.HeatIndexDisplay;
+import com.example.design.patterns.general.observer.headfirst.subject.impl.WeaterData;
 
 public class Hello {
 

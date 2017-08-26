@@ -1,7 +1,7 @@
-package com.example.design.patterns.general.observer.subject.impl;
+package com.example.design.patterns.general.observer.headfirst.subject.impl;
 
-import com.example.design.patterns.general.observer.observer.Observer;
-import com.example.design.patterns.general.observer.subject.Subject;
+import com.example.design.patterns.general.observer.headfirst.observer.Observer;
+import com.example.design.patterns.general.observer.headfirst.subject.Subject;
 
 import java.util.ArrayList;
 import java.util.List;

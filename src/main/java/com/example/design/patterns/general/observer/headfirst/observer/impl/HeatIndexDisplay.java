@@ -1,8 +1,8 @@
-package com.example.design.patterns.general.observer.observer.impl;
+package com.example.design.patterns.general.observer.headfirst.observer.impl;
 
 import com.example.design.patterns.general.observer.DisplayElement;
-import com.example.design.patterns.general.observer.observer.Observer;
-import com.example.design.patterns.general.observer.subject.Subject;
+import com.example.design.patterns.general.observer.headfirst.observer.Observer;
+import com.example.design.patterns.general.observer.headfirst.subject.Subject;
 
 public class HeatIndexDisplay implements Observer, DisplayElement {
 

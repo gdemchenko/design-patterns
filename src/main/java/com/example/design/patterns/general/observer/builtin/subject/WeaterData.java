@@ -1,24 +1,20 @@
-package com.example.design.patterns.general.observer.headfirst.subject.impl;
+package com.example.design.patterns.general.observer.builtin.subject;
 
-import com.example.design.patterns.general.observer.headfirst.observer.Observer;
-import com.example.design.patterns.general.observer.headfirst.subject.Subject;
+import java.util.Observable;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class WeaterData implements Subject {
+public class WeaterData extends Observable {
 
     private float temperature;
     private float humidity;
     private float pressure;
-    private List<Observer> observers;
 
 
     public WeaterData() {
-        observers = new ArrayList<>();
+
     }
 
     public void measurementsChanged() {
+        setChanged();
         notifyObservers();
     }
 
@@ -29,20 +25,15 @@ public class WeaterData implements Subject {
         measurementsChanged();
     }
 
-    @Override
-    public void registerObserver(Observer observer) {
-        observers.add(observer);
+    public float getTemperature() {
+        return temperature;
     }
 
-    @Override
-    public void removeObserver(Observer observer) {
-        observers.remove(observer);
+    public float getHumidity() {
+        return humidity;
     }
 
-    @Override
-    public void notifyObservers() {
-        for (Observer observer : observers) {
-            observer.update(temperature, humidity, pressure);
-        }
+    public float getPressure() {
+        return pressure;
     }
 }

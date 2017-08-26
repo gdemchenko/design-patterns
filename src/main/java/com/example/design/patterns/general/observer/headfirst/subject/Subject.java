@@ -1,6 +1,6 @@
-package com.example.design.patterns.general.observer.subject;
+package com.example.design.patterns.general.observer.headfirst.subject;
 
-import com.example.design.patterns.general.observer.observer.Observer;
+import com.example.design.patterns.general.observer.headfirst.observer.Observer;
 
 public interface Subject {
 

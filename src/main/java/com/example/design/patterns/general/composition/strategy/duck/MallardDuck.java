@@ -8,7 +8,7 @@ public class MallardDuck extends Duck {
   public MallardDuck() {
     quackBehaviour = new Quack();
     flyBehaviour = new FlyWithWings();
-  }л
+  }
 
   public void display() {
     System.out.println("imma mallard duck!");

@@ -1,4 +1,4 @@
-package com.example.design.patterns.general.observer.observer;
+package com.example.design.patterns.general.observer.headfirst.observer;
 
 public interface Observer {
 

@@ -1,19 +1,21 @@
-package com.example.design.patterns.general.observer.headfirst.observer.impl;
+package com.example.design.patterns.general.observer.builtin.observer;
 
-import com.example.design.patterns.general.observer.headfirst.DisplayElement;
-import com.example.design.patterns.general.observer.headfirst.observer.Observer;
-import com.example.design.patterns.general.observer.headfirst.subject.Subject;
+import com.example.design.patterns.general.observer.builtin.subject.WeaterData;
+import com.example.design.patterns.general.observer.DisplayElement;
+
+import java.util.Observable;
+import java.util.Observer;
 
 public class CurrentConditionsDisplay implements Observer, DisplayElement {
 
     private float temperature;
     private float humidity;
     private float pressure;
-    private Subject weatherData;
+    private Observable weatherData;
 
-    public CurrentConditionsDisplay(Subject weatherData) {
+    public CurrentConditionsDisplay(Observable weatherData) {
         this.weatherData = weatherData;
-        weatherData.registerObserver(this);
+        weatherData.addObserver(this);
     }
 
     @Override
@@ -24,10 +26,14 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement {
     }
 
     @Override
-    public void update(float temperature, float humidity, float pressure) {
-        this.temperature = temperature;
-        this.humidity = humidity;
-        this.pressure = pressure;
-        display();
+    public void update(Observable o, Object arg) {
+        if (o instanceof WeaterData) {
+            WeaterData wd = (WeaterData) o;
+            this.temperature = wd.getTemperature();
+            this.humidity = wd.getHumidity();
+            this.pressure = wd.getPressure();
+            display();
+        }
     }
+
 }

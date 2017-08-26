@@ -1,18 +1,20 @@
-package com.example.design.patterns.general.observer.headfirst.observer.impl;
+package com.example.design.patterns.general.observer.builtin.observer;
 
-import com.example.design.patterns.general.observer.headfirst.DisplayElement;
-import com.example.design.patterns.general.observer.headfirst.observer.Observer;
-import com.example.design.patterns.general.observer.headfirst.subject.Subject;
+import com.example.design.patterns.general.observer.builtin.subject.WeaterData;
+import com.example.design.patterns.general.observer.DisplayElement;
+
+import java.util.Observable;
+import java.util.Observer;
 
 public class HeatIndexDisplay implements Observer, DisplayElement {
 
     private float temperature;
     private float humidity;
-    private Subject weatherData;
+    private Observable weatherData;
 
-    public HeatIndexDisplay(final Subject weaterData) {
+    public HeatIndexDisplay(final Observable weaterData) {
         this.weatherData = weaterData;
-        weatherData.registerObserver(this);
+        weatherData.addObserver(this);
     }
 
     @Override
@@ -21,12 +23,14 @@ public class HeatIndexDisplay implements Observer, DisplayElement {
     }
 
     @Override
-    public void update(float temperature, float humidity, float pressure) {
-        this.temperature = temperature;
-        this.humidity = humidity;
-        display();
+    public void update(Observable o, Object arg) {
+        if (o instanceof WeaterData) {
+            WeaterData wd = (WeaterData) o;
+            this.temperature = wd.getTemperature();
+            this.humidity = wd.getHumidity();
+            display();
+        }
     }
-
 
     private float computeHeatIndex(float t, float rh) {
         float index = (float)((16.923 + (0.185212 * t) + (5.37941 * rh) - (0.100254 * t * rh) +
